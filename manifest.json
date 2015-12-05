@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "Strava Helper",
-    "description": "This extension adds some nice features to the Strava website.",
+    "description": "This Chrome extension adds some nice features to the Strava website.",
     "version": "0.0.1",
 
     "content_scripts": [
