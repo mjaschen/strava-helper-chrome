@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+
+    "name": "Strava Helper",
+    "description": "This extension adds some nice features to the Strava website.",
+    "version": "0.0.1",
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.strava.com/*"
+            ],
+            "css": [
+                "strava-helper.css"
+            ],
+            "js": [
+                "jquery-2.1.4.js",
+                "strava-helper.js"
+            ]
+        }
+    ],
+
+    "web_accessible_resources": [
+        "kudos_all.png"
+    ]
+}
