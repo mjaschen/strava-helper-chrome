@@ -6,8 +6,11 @@ var strava_helper = (function(strava_helper) {
             $("div.icon-nav.icon-shop").parent().parent("li").remove();
         },
 
-        removeInviteSection: function() {
+        removeInviteSections: function() {
             $("#invite-your-friend-module").remove();
+            $("div.invite-friends").remove();
+            $(".upsell").remove();
+            $("#challenge-sidebar-rewards").remove();
         },
 
         removeUpcomingEvents: function () {
@@ -43,7 +46,7 @@ var strava_helper = (function(strava_helper) {
             strava_helper.cleanup.moveRecentActivitiesToTop();
             strava_helper.cleanup.removeDiscoverMoreSection();
             strava_helper.cleanup.removeDoradoSection();
-            strava_helper.cleanup.removeInviteSection();
+            strava_helper.cleanup.removeInviteSections();
             strava_helper.cleanup.removeUpcomingEvents();
             strava_helper.cleanup.removeShopLink();
         }
