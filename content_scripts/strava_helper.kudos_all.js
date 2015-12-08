@@ -1,31 +1,18 @@
-(function(window, chrome, $) {
+var strava_helper = (function(strava_helper) {
 
-    var strava_helper = {
-
+    strava_helper.kudos_all = {
         getKudosAllImage: function() {
-            var imageUrl = chrome.extension.getURL("kudos_all.png");
+            var imageUrl = chrome.extension.getURL("/assets/img/kudos_all.png");
             return "<img src=\"" + imageUrl + "\" width=\"20\" height=\"20\" title=\"Give Kudos to all visible activities!\">";
-        },
-
-        initKudosAllButton: function() {
-            $(
-                "<div/>",
-                {
-                    id: "strava-helper-kudos-all-button",
-                    title: "Give Kudos to all visible items.",
-                    html: strava_helper.getKudosAllImage()
-                }
-            ).prependTo("body");
-            $("#strava-helper-kudos-all-button").on("click", strava_helper.giveKudosToAll);
         },
 
         giveKudosToAll: function() {
             var count = $("button.js-add-kudo").length;
             $("button.js-add-kudo").trigger("click");
-            strava_helper.showKudosCount(count, true);
+            strava_helper.kudos_all.showKudosCount(count, true);
 
             var timer = window.setTimeout(function() {
-                strava_helper.resetKudosButton();
+                strava_helper.kudos_all.resetKudosButton();
             }, 3000);
         },
 
@@ -40,17 +27,25 @@
 
         resetKudosButton: function() {
             $("#strava-helper-kudos-all-button")
-                .html(strava_helper.getKudosAllImage())
+                .html(strava_helper.kudos_all.getKudosAllImage())
                 .removeClass("strava-helper-kudos-all-button-result animated bounce");
         },
 
         init: function() {
-            strava_helper.initKudosAllButton();
+            $(
+                "<div/>",
+                {
+                    id: "strava-helper-kudos-all-button",
+                    title: "Give Kudos to all visible items.",
+                    html: strava_helper.kudos_all.getKudosAllImage()
+                }
+            ).prependTo("body");
+            $("#strava-helper-kudos-all-button").on("click", strava_helper.kudos_all.giveKudosToAll);
         }
     };
 
-    strava_helper.init();
+    strava_helper.kudos_all.init();
 
     return strava_helper;
 
-}(window, chrome, window.jQuery));
+}(strava_helper));

@@ -3,7 +3,7 @@
 
     "name": "Strava Helper",
     "description": "This Chrome extension adds some nice features to the Strava website.",
-    "version": "0.0.1",
+    "version": "0.0.2",
 
     "content_scripts": [
         {
@@ -14,13 +14,18 @@
                 "strava-helper.css"
             ],
             "js": [
-                "jquery-2.1.4.js",
-                "strava-helper.js"
+                "bower_components/jquery/dist/jquery.min.js",
+                "content_scripts/strava_helper.root.js",
+                "content_scripts/strava_helper.util.js",
+                "content_scripts/strava_helper.cleanup.js",
+                "content_scripts/strava_helper.kudos_all.js",
+                "content_scripts/strava_helper.navbar.js",
+                "content_scripts/strava_helper.main.js"
             ]
         }
     ],
 
     "web_accessible_resources": [
-        "kudos_all.png"
+        "assets/img/kudos_all.png"
     ]
 }
