@@ -19,6 +19,10 @@ div#strava-helper-kudos-all-button:hover {
     border: 2px solid #fff;
 }
 
+div#strava-helper-kudos-all-button img {
+    vertical-align: baseline;
+}
+
 div#strava-helper-kudos-all-button.strava-helper-kudos-all-button-result {
     font-size: 12px;
     font-weight: normal;
