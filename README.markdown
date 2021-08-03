@@ -1,5 +1,7 @@
 # Strava Helper
 
+**Firefox and Chrome versions of this extension have been merged. See [Strava Helper](https://github.com/mjaschen/strava-helper-firefox)**
+
 This Chrome Add-on aims to provide some tweaks for the Strava Website.
 
 ## Give Kudos to All
